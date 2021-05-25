@@ -1003,9 +1003,9 @@ void contextLoads2() throws MessagingException {
 
 解决方案：编辑zkServer.cmd文件末尾添加pause 。这样运行出错就不会退出，会提示错误信息，方便找到原因。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshERcBbh6aAYOxnI1yFCMJ6ia2jsJzW3mIhF9ZUicsOQ2AclNAb2eUCFCg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525173559245](../assert/image-20210525173559245.png)
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshQM9ha9wq0nRMhQicxYEyI89HCXwVIxZzPthrPHFDur3VbwtFia6GeAicA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525173618295](../assert/image-20210525173618295.png)
 
 3、修改zoo.cfg配置文件
 
@@ -1019,7 +1019,7 @@ clientPort=2181  zookeeper的端口号
 
 修改完成后再次启动zookeeper
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshzuNFWROxUoicw96U1SpicxJNJFedhL6dPzcgpedqIE2XgxZHUpicTYDMA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525173628212](../assert/image-20210525173628212.png)
 
 4、使用zkCli.cmd测试
 
@@ -1032,15 +1032,15 @@ ls /：列出zookeeper根下保存的所有节点
 
 create –e /kuangshen 123：创建一个kuangshen节点，值为123
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshmI79TweJ88IvdkKgNxduic3xgVpYeDGHN10Wp27u0dIJoTRa3e7Z9TA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525173638541](../assert/image-20210525173638541.png)
 
 get /kuangshen：获取/kuangshen节点的值
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshpsqHHO1fsq3ucpfWQdqyYkOAxxO6mbD7YiczFdyklEG41cuMomRpUCg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525173649205](../assert/image-20210525173649205.png)
 
 我们再来查看一下节点
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshjRW6icsrmFYiavJaLYBa1UXl2FrQtCvxpqdXTtSwyZpcZvqoFnmae7QQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525173657738](../assert/image-20210525173657738.png)
 
 ## Dubbo
 
@@ -1087,7 +1087,7 @@ mvn clean package -Dmaven.test.skip=true
 
 **第一次打包的过程有点慢，需要耐心等待！直到成功！**
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshho9bzkKPPgVQRh3x35ueIYFGEDfygiaXKjOQQFuC2bxc1ImffuOsH2Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525173919235](../assert/image-20210525173919235.png)
 
 4、执行 dubbo-admin\target 下的dubbo-admin-0.0.1-SNAPSHOT.jar
 
@@ -1101,7 +1101,7 @@ java -jar dubbo-admin-0.0.1-SNAPSHOT.jar
 
 登录成功后，查看界面
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshjHbZUAW6UOLfJhknMjgemFYgr2hz27iaBE4tiaKA86ZqIhOjd3vttV5w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525173952188](../assert/image-20210525173952188.png)
 
 安装完成！
 
@@ -1296,7 +1296,7 @@ dubbo.registry.address=zookeeper://127.0.0.1:2181
 
 **3. 本来正常步骤是需要将服务提供者的接口打包，然后用pom文件导入，我们这里使用简单的方式，直接将服务的接口拿过来，路径必须保证正确，即和服务提供者相同；**
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshCZQj2L99hIN2HFHNQSzkSQMaUrbib6H4LJiabJur5V7icM0cq7ib8sK0gA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525174003567](../assert/image-20210525174003567.png)
 
 **4. 完善消费者的服务类**
 
@@ -1353,10 +1353,10 @@ public class ConsumerServerApplicationTests {
 
 **4. 消费者消费测试，结果：**
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60renshU2j95r3eBhJlZLBEgpoVVHDb8Vm9EU0XB4ZW0xxwhs2q4blguwGcibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525174011151](../assert/image-20210525174011151.png)
 
 **监控中心 ：**
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7JJjARRqcZibY4ZPv60rensh4rC1ED2BCl07c81gxj3uKN5PtDZXDquz8gWS2yJmib46kib1C0SF3ycw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+![image-20210525174019966](../assert/image-20210525174019966.png)
 
 **ok , 这就是SpingBoot + dubbo + zookeeper实现分布式开发的应用，其实就是一个服务拆分的思想；**
