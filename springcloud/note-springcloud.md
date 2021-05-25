@@ -158,17 +158,17 @@
 
 服务提供者的controller：
 
-![image-20210331170728399](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331170728399.png)
+![image-20210331170728399](../assert\image-20210331170728399.png)
 
 服务消费者的controller：
 
-![image-20210331170813307](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331170813307.png)
+![image-20210331170813307](../assert\image-20210331170813307.png)
 
 核心是RestTemplate 可以提供访问远程http服务的方法，这样一来我们就可以根据服务提供者的端口号去获取服务了
 
 记得RestTemplate是要自己配置到bean的：
 
-![image-20210331170936083](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331170936083.png)
+![image-20210331170936083](../assert\image-20210331170936083.png)
 
 # Eureka
 
@@ -178,11 +178,11 @@
 
 eureka遵循cap中的ap原则
 
-![image-20210331222342194](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331222342194.png)
+![image-20210331222342194](../assert\image-20210331222342194.png)
 
-![image-20210331222149806](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331222149806.png)
+![image-20210331222149806](../assert\image-20210331222149806.png)
 
-![image-20210331222613388](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331222613388.png)
+![image-20210331222613388](../assert\image-20210331222613388.png)
 
 - 一句话说：zookeeper追求的是让用户获得的数据是最新的，但这可能会导致瘫痪；而eureka虽然不能保证数据是最新的，但很少完全挂掉。eureka可以很好地应对因网络故障导致的部分节点失去联系。而不会像zookeeper那样整个注册服务瘫痪。
 
@@ -236,11 +236,11 @@ eureka:
 
 3.启动类 加注解
 
-![image-20210331211022751](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331211022751.png)
+![image-20210331211022751](../assert\image-20210331211022751.png)
 
 4.访问http://localhost:7001/即可  （7001是自己配的端口）
 
-![image-20210331211207453](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331211207453.png)
+![image-20210331211207453](../assert\image-20210331211207453.png)
 
 ## eureka 要注册到服务器端的提供者
 
@@ -265,23 +265,23 @@ info:
 
 3.启动类 加注解
 
-![image-20210331212751580](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331212751580.png)
+![image-20210331212751580](../assert\image-20210331212751580.png)
 
 ### 服务发现 提供注册进来的微服务的具体信息
 
 1、controller写类
 
-![image-20210331215539996](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331215539996.png)
+![image-20210331215539996](../assert\image-20210331215539996.png)
 
 2.注解开启功能
 
-![image-20210331215602022](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331215602022.png)
+![image-20210331215602022](../assert\image-20210331215602022.png)
 
 3.结果
 
-![image-20210331215649880](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331215649880.png)
+![image-20210331215649880](../assert\image-20210331215649880.png)
 
-![image-20210331215945088](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331215945088.png)
+![image-20210331215945088](../assert\image-20210331215945088.png)
 
 可以看到注册进来的微服务的一些具体信息
 
@@ -289,7 +289,7 @@ info:
 
 Controller写法， 通过提供者在eureka注册中心注册的服务名来得到信息
 
-![image-20210409152823828](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409152823828.png)
+![image-20210409152823828](../assert\image-20210409152823828.png)
 
 
 
@@ -299,25 +299,25 @@ Controller写法， 通过提供者在eureka注册中心注册的服务名来得
 
 1.配置三个eureka服务器端 用defaultZone相互关联
 
-![image-20210331220943749](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331220943749.png)
+![image-20210331220943749](../assert\image-20210331220943749.png)
 
-![image-20210331221024296](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331221024296.png)
+![image-20210331221024296](../assert\image-20210331221024296.png)
 
 2.要注册到eureka服务器端的  提供者  的配置信息需要更改， 将注册信息改到刚刚搭好的集群上
 
-![image-20210331221415170](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331221415170.png)
+![image-20210331221415170](../assert\image-20210331221415170.png)
 
 3.配置成功后每个eureka节点都会配置进集群内其他节点 一个eureka崩了 其他的还在，实现负载均衡 + 故障容错！！
 
-![image-20210331221740716](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210331221740716.png)
+![image-20210331221740716](../assert\image-20210331221740716.png)
 
 # Ribbon
 
 - spring cloud ribbon是基于Netflix Ribbon实现的一套客户端负载均衡工具
 
-![image-20210401200122226](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210401200122226.png)
+![image-20210401200122226](../assert\image-20210401200122226.png)
 
-![image-20210408210715568](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210408210715568.png)
+![image-20210408210715568](../assert\image-20210408210715568.png)
 
 ## ribbon依赖
 
@@ -336,13 +336,13 @@ Controller写法， 通过提供者在eureka注册中心注册的服务名来得
 
 2.配置application.yml
 
-![image-20210401205407789](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210401205407789.png)
+![image-20210401205407789](../assert\image-20210401205407789.png)
 
 3.注解
 
-![image-20210401205426394](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210401205426394.png)
+![image-20210401205426394](../assert\image-20210401205426394.png)
 
-![image-20210401213458112](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210401213458112.png)
+![image-20210401213458112](../assert\image-20210401213458112.png)
 
 ## Ribbon 自定义负载均衡算法
 
@@ -350,9 +350,9 @@ Controller写法， 通过提供者在eureka注册中心注册的服务名来得
 
 在启动类的@RibbonClient中写入自定义类名字就行
 
-![image-20210409150421178](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409150421178.png)
+![image-20210409150421178](../assert\image-20210409150421178.png)
 
-![image-20210409150449208](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409150449208.png)
+![image-20210409150449208](../assert\image-20210409150449208.png)
 
 
 
@@ -373,15 +373,15 @@ Feign是声明式的web service客户端，它使微服务之间的调用变得�
 
 2.客户端的 Service层注册类接口写法
 
-![image-20210409152453078](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409152453078.png)
+![image-20210409152453078](../assert\image-20210409152453078.png)
 
 3.提供者类Controller层写法
 
-![image-20210409152329202](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409152329202.png)
+![image-20210409152329202](../assert\image-20210409152329202.png)
 
 4.客户端加注解
 
-![image-20210409153341819](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409153341819.png)
+![image-20210409153341819](../assert\image-20210409153341819.png)
 
 ## Feign和ribbon区别
 
@@ -395,9 +395,9 @@ feign通过接口和注解来访问
 
 服务器雪崩
 
-![image-20210409154114528](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409154114528.png)
+![image-20210409154114528](../assert\image-20210409154114528.png)
 
-![image-20210409154307755](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409154307755.png)
+![image-20210409154307755](../assert\image-20210409154307755.png)
 
 ## Hystrix依赖
 
@@ -420,15 +420,15 @@ feign通过接口和注解来访问
 
 2.controller类提供备选函数，加注解
 
-![image-20210409212334555](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409212334555.png)
+![image-20210409212334555](../assert\image-20210409212334555.png)
 
 3.启动类加注解开启服务
 
-![image-20210409160833339](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409160833339.png)
+![image-20210409160833339](../assert\image-20210409160833339.png)
 
 ## 服务降级
 
-![image-20210409221906476](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409221906476.png)
+![image-20210409221906476](../assert\image-20210409221906476.png)
 
 比如A在某个时间段高并发了。那可以关掉B和C的服务，去帮助完成A的业务。例如：双十一关掉退款服务
 
@@ -440,17 +440,17 @@ feign通过接口和注解来访问
 
 2.一个回调方法工厂类 集成FallbackFactory 重写create
 
-![image-20210409222631132](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409222631132.png)
+![image-20210409222631132](../assert\image-20210409222631132.png)
 
-![image-20210409223130727](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409223130727.png)
+![image-20210409223130727](../assert\image-20210409223130727.png)
 
 3.在客户端实现服务降级的类（接口）加注解
 
-![image-20210409223249871](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409223249871.png)
+![image-20210409223249871](../assert\image-20210409223249871.png)
 
 4.feign服务器端的yml文件开启降级feign.hystrix
 
-![image-20210409223533622](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409223533622.png)
+![image-20210409223533622](../assert\image-20210409223533622.png)
 
 之后去访问请求，即使服务被关了，任然可以返回FallbackFactory 里提供的值，而不是直接崩掉
 
@@ -481,7 +481,7 @@ feign通过接口和注解来访问
 
 - dashboard端口模块启动类加上@EnableHystrixDashboard
 
-![image-20210410165339381](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210410165339381.png)
+![image-20210410165339381](../assert\image-20210410165339381.png)
 
 - dashboard端口模块的yml要配置一下hystrix.dashboard.proxyStreamAllowList   (不一定会出现这个问题 但保险起见)
 
@@ -496,11 +496,11 @@ feign通过接口和注解来访问
 
 2.被监控的服务的pom中要有监控的包 actuator和hystrix
 
-![image-20210409232447558](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409232447558.png)
+![image-20210409232447558](../assert\image-20210409232447558.png)
 
 3.被监控的服务的启动类要加一个servlet保证被监控 并开启对熔断的支持 controller上有熔断注解（dashboard是对熔断数据的监控）
 
-![image-20210410165837790](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210410165837790.png)
+![image-20210410165837790](../assert\image-20210410165837790.png)
 
 ```
     @Bean
@@ -511,21 +511,21 @@ feign通过接口和注解来访问
     }
 ```
 
-![image-20210409234405855](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409234405855.png)
+![image-20210409234405855](../assert\image-20210409234405855.png)
 
 4.启动类加注解
 
-![image-20210409230537762](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210409230537762.png)
+![image-20210409230537762](../assert\image-20210409230537762.png)
 
 5.直接访问/hystrix     9001的端口的话是：http://localhost:9001/hystrix
 
 6.注册进端口，可以看到信息
 
-![image-20210410165925477](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210410165925477.png)
+![image-20210410165925477](../assert\image-20210410165925477.png)
 
 
 
-![image-20210410165939112](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210410165939112.png)
+![image-20210410165939112](../assert\image-20210410165939112.png)
 
 # zuul路由网关
 
@@ -535,7 +535,7 @@ zuul包含了对请求的路由和过滤两个最主要的功能。
 
 - 过滤
 
-  ![image-20210411165356163](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210411165356163.png)
+  ![image-20210411165356163](../assert\image-20210411165356163.png)
 
   
 
@@ -563,17 +563,17 @@ zuul包含了对请求的路由和过滤两个最主要的功能。
 
 2.启动类加注解@EnableZuulProxy
 
-![image-20210411172445927](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210411172445927.png)
+![image-20210411172445927](../assert\image-20210411172445927.png)
 
 3.application.yml配置一下 注册到eureka里
 
-![image-20210411181104615](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210411181104615.png)
+![image-20210411181104615](../assert\image-20210411181104615.png)
 
 4.访问 注意这里本来的/springcloud-provider-dept/ （本来是微服务的名字）改成了/mydept/   然后必须要带前缀/lyf/   这都是zuul配置的
 
 www.lyf.com是自己改的  相当于localhost       
 
-![image-20210411181130341](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210411181130341.png)
+![image-20210411181130341](../assert\image-20210411181130341.png)
 
 # Springcloud config
 
@@ -581,13 +581,13 @@ www.lyf.com是自己改的  相当于localhost
 
 springcloud config分为服务端和客户端两部分   
 
-![image-20210411231857869](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210411231857869.png)
+![image-20210411231857869](../assert\image-20210411231857869.png)
 
 
 
 - springcloud config干嘛
 
-  ![image-20210411232038048](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210411232038048.png)
+  ![image-20210411232038048](../assert\image-20210411232038048.png)
 
 ## Config 服务器端
 
@@ -637,11 +637,11 @@ spring:
 
 3.启动类加注解
 
-![image-20210414205235961](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210414205235961.png)
+![image-20210414205235961](../assert\image-20210414205235961.png)
 
 4.要读哪个配置就直接  /application_xxx.yml
 
-![image-20210414205327902](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210414205327902.png)
+![image-20210414205327902](../assert\image-20210414205327902.png)
 
 ## config客户端
 
