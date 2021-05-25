@@ -64,7 +64,7 @@ drop index 索引名 on 表名
 	create unique index nameindex on t_user(name);
 ```
 
-![image-20200226204335362](C:\Users\rog\Desktop\web开发\mysql数据库\MYSQL索引.assets\image-20200226204335362.png)
+![image-20210525153053685](../../../../AppData/Roaming/Typora/typora-user-images/image-20210525153053685.png)
 
 ```sql
 4.复合索引
