@@ -12,17 +12,17 @@
 
 ## 给属性赋值的方法
 
-![image-20201104223713739](../assert\image-20201104223713739.png)
+![image-20201104223713739](../assert/image-20201104223713739.png)
 
 - 实体类赋值
 
-![image-20201104224135390](../assert\image-20201104224135390.png)
+![image-20201104224135390](../assert/image-20201104224135390.png)
 
 
 
 - 占位符 随机数玩法
 
-![image-20201104225054632](../assert\image-20201104225054632.png)
+![image-20201104225054632](../assert/image-20201104225054632.png)
 
 
 
@@ -30,15 +30,15 @@
 
 ## properties和yml的选择
 
-![image-20201104225636166](../assert\image-20201104225636166.png)
+![image-20201104225636166](../assert/image-20201104225636166.png)
 
 
 
 ## JSR303校验（不是很重要）
 
-![image-20201104230557560](../assert\image-20201104230557560.png)
+![image-20201104230557560](../assert/image-20201104230557560.png)
 
-![image-20201104230908080](../assert\image-20201104230908080.png)
+![image-20201104230908080](../assert/image-20201104230908080.png)
 
 
 
@@ -46,17 +46,17 @@
 
 - 在实际中我们的代码可能测试要一套环境 开发要一套环境等等，用这个可以轻松的切换环境
 
-![image-20201104232019713](../assert\image-20201104232019713.png)
+![image-20201104232019713](../assert/image-20201104232019713.png)
 
 
 
-![image-20201104232125497](../assert\image-20201104232125497.png)
+![image-20201104232125497](../assert/image-20201104232125497.png)
 
 ​                                                                                                           激活dev版本的环境
 
 - yaml也可以把几套配置写一起
 
-  ![image-20201104232651694](../assert\image-20201104232651694.png)
+  ![image-20201104232651694](../assert/image-20201104232651694.png)
 
 - 成功启用了test这套环境
 
@@ -67,23 +67,23 @@
 - 在配置文件中能配置的东西都有一个固有的规律
 - xxxAutoConfiguration:自动装配，有默认值
 - xxxProperties：和配置文件绑定，改变默认值，实现自定义配置
-- ![image-20201105224005654](../assert\image-20201105224005654.png)
+- ![image-20201105224005654](../assert/image-20201105224005654.png)
 
 # Springboot web 开发
 
 ## 静态资源
 
-![image-20201105230033521](../assert\image-20201105230033521.png)
+![image-20201105230033521](../assert/image-20201105230033521.png)
 
 可以在这四个目录下放静态资源，可以直接访问
 
-![image-20201105231010520](../assert\image-20201105231010520.png)![image-20201105231023957](../assert\image-20201105231023957.png)
+![image-20201105231010520](../assert/image-20201105231010520.png)![image-20201105231023957](../assert/image-20201105231023957.png)
 
-![image-20201105231342132](../assert\image-20201105231342132.png)
+![image-20201105231342132](../assert/image-20201105231342132.png)
 
 ## 首页定制
 
-- 将一个index.html放在![image-20201105232506869](../assert\image-20201105232506869.png)
+- 将一个index.html放在![image-20201105232506869](../assert/image-20201105232506869.png)
 
 中的其中一个位置就行
 
@@ -108,13 +108,13 @@
 </dependency>
 ```
 
-第一步导入约束![image-20201107232004013](../assert\image-20201107232004013.png)
+第一步导入约束![image-20201107232004013](../assert/image-20201107232004013.png)
 
 ```
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 ```
 
-![image-20201108221119136](../assert\image-20201108221119136.png)
+![image-20201108221119136](../assert/image-20201108221119136.png)
 
 - th属性，常用th属性如下：
 
@@ -199,21 +199,21 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
 # fragment实现前端代码复用
 
-![image-20201202210737054](../assert\image-20201202210737054.png) 将需要复用的组件写在里面
+![image-20201202210737054](../assert/image-20201202210737054.png) 将需要复用的组件写在里面
 
-![image-20201202210759744](../assert\image-20201202210759744.png)
+![image-20201202210759744](../assert/image-20201202210759744.png)
 
 
 
 需要复用的地方 调用组件：
 
-![image-20201202210835392](../assert\image-20201202210835392.png)
+![image-20201202210835392](../assert/image-20201202210835392.png)
 
 也可以在调用组件时候传参，配合tymeleaf语法实现一些功能（比如高亮之类的）：
 
-![image-20201202212811847](../assert\image-20201202212811847.png)
+![image-20201202212811847](../assert/image-20201202212811847.png)
 
-![image-20201202212831262](../assert\image-20201202212831262.png)
+![image-20201202212831262](../assert/image-20201202212831262.png)
 
 
 
@@ -221,43 +221,43 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
 ## 登录
 
-![image-20201202194525987](../assert\image-20201202194525987.png)
+![image-20201202194525987](../assert/image-20201202194525987.png)
 
 
 
-![image-20201202194550633](../assert\image-20201202194550633.png)
+![image-20201202194550633](../assert/image-20201202194550633.png)
 
 ## 拦截器
 
 1. 写一个类继承HandlerInterceptor类 通过有无session判断是否通过登录进入业面 retrun false代表拦截  true代表通过
 
-   ![image-20201202202814748](../assert\image-20201202202814748.png)
+   ![image-20201202202814748](../assert/image-20201202202814748.png)
 
 2.在启动类里重写addInterceptors方法 添加自己写的拦截器类  addPathPatterns里添加要拦截的路径  excludePathPatterns中代表可以访问的路径
 
-![image-20201202202945608](../assert\image-20201202202945608.png)
+![image-20201202202945608](../assert/image-20201202202945608.png)
 
 # 数据的显示
 
-![image-20201202215858426](../assert\image-20201202215858426.png)
+![image-20201202215858426](../assert/image-20201202215858426.png)
 
-![image-20201202215905992](../assert\image-20201202215905992.png)
+![image-20201202215905992](../assert/image-20201202215905992.png)
 
 ## 时间日期格式化
 
-![image-20201209230135145](../assert\image-20201209230135145.png)
+![image-20201209230135145](../assert/image-20201209230135145.png)
 
 ## 修改 删除数据
 
 # 路径的拼接
 
-![image-20201214231322219](../assert\image-20201214231322219.png)
+![image-20201214231322219](../assert/image-20201214231322219.png)
 
-![image-20201214231340987](../assert\image-20201214231340987.png)![image-20201214231437537](../assert\image-20201214231437537.png)
+![image-20201214231340987](../assert/image-20201214231340987.png)![image-20201214231437537](../assert/image-20201214231437537.png)
 
 # 400 500
 
-![image-20201214231501364](../assert\image-20201214231501364.png)
+![image-20201214231501364](../assert/image-20201214231501364.png)
 
 将页面放到templates下的error文件夹中即可 404.html就是走404错误 同样 500就是500.html 其他同理
 
@@ -396,7 +396,7 @@ public class DruidConfig {
 }
 ```
 
-![image-20210316211330640](../assert\image-20210316211330640.png)
+![image-20210316211330640](../assert/image-20210316211330640.png)
 
 # 整合mybatis
 
@@ -412,11 +412,11 @@ public class DruidConfig {
 
 1.编写UserMapper接口
 
-![image-20210317170751134](../assert\image-20210317170751134.png)
+![image-20210317170751134](../assert/image-20210317170751134.png)
 
 2.在resource下新建目录 编写UserMapper.xml
 
-![image-20210317164756900](../assert\image-20210317164756900.png)
+![image-20210317164756900](../assert/image-20210317164756900.png)
 
 3.在properties/yml中配置
 
@@ -468,7 +468,7 @@ mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
 
 5.UserController实现UserMapper方法：
 
-![image-20210317170724209](../assert\image-20210317170724209.png)
+![image-20210317170724209](../assert/image-20210317170724209.png)
 
 # SpringSecurity
 
@@ -485,7 +485,7 @@ mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
 
 自己配置config类继承WebSecurityConfigurerAdapter类 重写configure方法 别忘记注解
 
-![image-20210317205205975](../assert\image-20210317205205975.png)
+![image-20210317205205975](../assert/image-20210317205205975.png)
 
 认证与授权：
 
@@ -531,17 +531,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 2.写用户表实体类 实现UserDetails接口，或者先写好用户实体类，然后来个实现用UserDetails接口的类，在里面实现User
 
-![image-20210512185402434](../assert\image-20210512185402434.png)
+![image-20210512185402434](../assert/image-20210512185402434.png)
 
-![image-20210512185422985](../assert\image-20210512185422985.png)
+![image-20210512185422985](../assert/image-20210512185422985.png)
 
 3.写一个MyUserDetailsService类实现UserDetailsService接口，重写loadUserByUsername，在里面根据用户名查数据表，找到对应的User，把它对应的role也放进去，并把它放在UserAuth里返回
 
-![image-20210512185709967](../assert\image-20210512185709967.png)
+![image-20210512185709967](../assert/image-20210512185709967.png)
 
 4.在WebSecurityConfig中的Configure方法设置刚刚写好的myUserDetailsService
 
-![image-20210512185839658](../assert\image-20210512185839658.png)
+![image-20210512185839658](../assert/image-20210512185839658.png)
 
 
 
@@ -549,17 +549,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 1.账号密码首先要经过一个UsernamePasswordAuthenticationFilter过滤器，其实对账号密码的认证就在这里面，这里我重写这个类
 
-![image-20210514151454804](../assert\image-20210514151454804.png)
+![image-20210514151454804](../assert/image-20210514151454804.png)
 
 2.UsernamePasswordAuthenticationFilter主要就是通过attemptAuthentication方法对传入的request请求（就是传进来的账号密码数据）进行处理，大致的流程，将request经过流操作读出username和password，然后调用userService.checkLogin方法（就是通过username取出数据库中的username和password，并且和传进来的username，password进行比对，详见2.1）对账号密码进行校验——
 
 如果校验成功（返回true），则将账号密码写到一个新的token authrequest中去，并调用this.getAuthenticationManager().authenticate(authRequest)，这里做了什么？
 
-![image-20210514151640182](../assert\image-20210514151640182.png)
+![image-20210514151640182](../assert/image-20210514151640182.png)
 
 2.1 userService.checkLogin方法 就是根据账号得到账号密码，如果为空返回false，如果正确返回true
 
-![image-20210514152254811](../assert\image-20210514152254811.png)
+![image-20210514152254811](../assert/image-20210514152254811.png)
 
 3.this.getAuthenticationManager().authenticate(authRequest)做了什么？
 
@@ -646,9 +646,9 @@ ublic class DaoAuthenticationProvider extends AbstractUserDetailsAuthenticationP
 
 ​       如果没有，则进行用户的信息验证，执行DaoAuthenticationProvider中的retrieveUser方法，retireveUser就是调用我们写的DetailsService。loadUserByUsername方法，获取一个UserDetails对象
 
-![image-20210514153216844](../assert\image-20210514153216844.png)
+![image-20210514153216844](../assert/image-20210514153216844.png)
 
-![image-20210514153347491](../assert\image-20210514153347491.png)
+![image-20210514153347491](../assert/image-20210514153347491.png)
 
 ​          如果UserDetails对象为null或者获取时出错就抛出异常UsernameNotFoundException或AuthenticationServiceException异常，
 
@@ -662,7 +662,7 @@ ublic class DaoAuthenticationProvider extends AbstractUserDetailsAuthenticationP
 
 判断密码是否正确：
 
-![image-20210514154058142](../assert\image-20210514154058142.png)
+![image-20210514154058142](../assert/image-20210514154058142.png)
 
 第一个参数user是我们通过UserDetailService.loadbyusername 拿到的userauth（也就是说里面的账号密码是刚刚在数据库里拿出来），第二个参数authentication是我们刚刚在UsernamePasswordAuthenticationFilter解析request拿到username和password后创建的token
 
@@ -670,7 +670,7 @@ ublic class DaoAuthenticationProvider extends AbstractUserDetailsAuthenticationP
 
 **我觉得这里就是比对账号密码是否正确的核心啊——数据库的信息和表单的信息的比对**
 
-![image-20210514153725733](../assert\image-20210514153725733.png)
+![image-20210514153725733](../assert/image-20210514153725733.png)
 
 后置判断，判断密码是否过期：
 
@@ -678,15 +678,15 @@ ublic class DaoAuthenticationProvider extends AbstractUserDetailsAuthenticationP
 
 ​    2、如果是新的UserDetails，那新获取的UserDetails对象放入缓存中，下次直接缓存里拿
 
-![image-20210514155527484](../assert\image-20210514155527484.png)
+![image-20210514155527484](../assert/image-20210514155527484.png)
 
 
 
 ​     3、新建一个UsernamePasswordAuthenticationToken一个对象，将authenticated设为true(原来传入的UsernamePasswordAuthenticationToken对象authenticated为false)并返回
 
-![image-20210514155551856](../assert\image-20210514155551856.png)
+![image-20210514155551856](../assert/image-20210514155551856.png)
 
-![image-20210514155628248](../assert\image-20210514155628248.png)
+![image-20210514155628248](../assert/image-20210514155628248.png)
 
 
 
@@ -735,7 +735,7 @@ public class SwaggerConfig {
 
 4.测试：http://localhost:8080/swagger-ui.html
 
-![image-20210318210101177](../assert\image-20210318210101177.png)
+![image-20210318210101177](../assert/image-20210318210101177.png)
 
 ## 配置swagger
 
@@ -770,7 +770,7 @@ public class SwaggerConfig {
 }
 ```
 
-![image-20210318211953354](../assert\image-20210318211953354.png)
+![image-20210318211953354](../assert/image-20210318211953354.png)
 
 ## swagger配置扫描接口
 
@@ -798,13 +798,13 @@ public Docket docket(){
 
 - .enable（）表示是是否启动swagger
 
-- .groupName("")用来设置分组 不同的Docket设不同的groupname 可以切换![image-20210318220703124](../assert\image-20210318220703124.png)
+- .groupName("")用来设置分组 不同的Docket设不同的groupname 可以切换![image-20210318220703124](../assert/image-20210318220703124.png)
 
 ### 小技巧：获取当前开发环境
 
  根据环境决定是否启动sawgger（可以学习如何获得环境的值（properties/yml））
 
-![image-20210318215126379](../assert\image-20210318215126379.png)
+![image-20210318215126379](../assert/image-20210318215126379.png)
 
 ## 实体类配置/注释
 
@@ -812,31 +812,31 @@ public Docket docket(){
 
 
 
-![image-20210318222357236](../assert\image-20210318222357236.png)
+![image-20210318222357236](../assert/image-20210318222357236.png)
 
-![image-20210318222422990](../assert\image-20210318222422990.png)
+![image-20210318222422990](../assert/image-20210318222422990.png)
 
 
 
 添加注释：
 
-![image-20210318222531548](../assert\image-20210318222531548.png)
+![image-20210318222531548](../assert/image-20210318222531548.png)
 
-![image-20210318222629868](../assert\image-20210318222629868.png)
+![image-20210318222629868](../assert/image-20210318222629868.png)
 
 ---
 
 
 
-![image-20210318222510196](../assert\image-20210318222510196.png)
+![image-20210318222510196](../assert/image-20210318222510196.png)
 
-![image-20210318222552074](../assert\image-20210318222552074.png)
+![image-20210318222552074](../assert/image-20210318222552074.png)
 
 ## 测试
 
-![image-20210318223341913](../assert\image-20210318223341913.png)
+![image-20210318223341913](../assert/image-20210318223341913.png)
 
-![image-20210318223401383](../assert\image-20210318223401383.png)
+![image-20210318223401383](../assert/image-20210318223401383.png)
 
 ## 总结swagger优点
 
@@ -858,11 +858,11 @@ swagger 优秀！
 
 1.在启动项上用@EnableAsync 开启异步注解功能
 
-![image-20210319163109068](../assert\image-20210319163109068.png)
+![image-20210319163109068](../assert/image-20210319163109068.png)
 
 2.在异步方法上加@Async
 
-![image-20210319163143674](../assert\image-20210319163143674.png)
+![image-20210319163143674](../assert/image-20210319163143674.png)
 
 
 
@@ -879,7 +879,7 @@ swagger 优秀！
 
 2.配数据
 
-![image-20210319172138248](../assert\image-20210319172138248.png)
+![image-20210319172138248](../assert/image-20210319172138248.png)
 
 3.发邮件
 
@@ -905,7 +905,7 @@ class SpringbootDemo006TestApplicationTests {
 }
 ```
 
-![image-20210319175928028](../assert\image-20210319175928028.png)
+![image-20210319175928028](../assert/image-20210319175928028.png)
 
 复杂邮件：
 
@@ -937,11 +937,11 @@ void contextLoads2() throws MessagingException {
 
 1.在启动项使用@EnableScheduling注解开启定时
 
-![image-20210323101721710](../assert\image-20210323101721710.png)
+![image-20210323101721710](../assert/image-20210323101721710.png)
 
 2.写任务类 要执行的方法加@Scheduled（cron="    "）
 
-![image-20210323103718253](../assert\image-20210323103718253.png)
+![image-20210323103718253](../assert/image-20210323103718253.png)
 
 ## cron表达式 :
 
@@ -1046,9 +1046,9 @@ get /kuangshen：获取/kuangshen节点的值
 
 Dubbo是一款prc框架 而zookeeper是它推荐的一款注册中心（Registry）
 
-![image-20210323170604316](../assert\image-20210323170604316.png)
+![image-20210323170604316](../assert/image-20210323170604316.png)
 
-![image-20210323153021923](../assert\image-20210323153021923.png)
+![image-20210323153021923](../assert/image-20210323153021923.png)
 
 ## Dubbo-admin(dubbo可视化界面可选)
 
