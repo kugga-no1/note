@@ -232,9 +232,9 @@ B+Tree相对于B-Tree有几点不同：
 
 - 幻读：两次count之间有个事物插入（删除不是）除了数据，造成两次count不同 （和不可重复读的区别重点在于 是插入还是修改还是删除）
 
-  ![image-20210424165628762](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424165628762.png)
+  ![image-20210424165628762](../assert/image-20210424165628762.png)
 
-  ![image-20210424165636296](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424165636296.png)
+  ![image-20210424165636296](../assert/image-20210424165636296.png)
 
   
 
@@ -242,7 +242,7 @@ B+Tree相对于B-Tree有几点不同：
 
   RR和RC的MVCC的区别在于（为什么RR可以解决不可重复读问题？）： mvcc的实现是每个行都有一个隐藏的列记录最近操作的事务号，一个隐藏列代表回滚指针。每操作一次会记录数据和事务号，并用回滚指针串起来（版本链）。
 
-  ![image-20210424165853320](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424165853320.png)
+  ![image-20210424165853320](../assert/image-20210424165853320.png)
 
   
 
@@ -266,7 +266,7 @@ B+Tree相对于B-Tree有几点不同：
 
 ## 各种锁的区别
 
-![image-20210424170225886](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424170225886.png)
+![image-20210424170225886](../assert/image-20210424170225886.png)
 
 ## 按粒读划分——行锁和表锁
 
@@ -276,27 +276,27 @@ B+Tree相对于B-Tree有几点不同：
 
 ## 行锁有记录锁 间隙锁 临键锁
 
-![image-20210424170845442](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424170845442.png)
+![image-20210424170845442](../assert/image-20210424170845442.png)
 
-![image-20210424170852649](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424170852649.png)
+![image-20210424170852649](../assert/image-20210424170852649.png)
 
-![image-20210424170858443](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424170858443.png)
+![image-20210424170858443](../assert/image-20210424170858443.png)
 
 - innodb的可重复读级别可以解决幻读的原因就是有间隙锁和临键锁（这两种锁就是针对insert操作的）它把这些范围锁住了，也就不能在这些范围内insert新数据了，自然而然也不会再发生幻读
 
 ## 共享锁（读锁）和排他锁（写锁）
 
-![image-20210424170358270](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424170358270.png)
+![image-20210424170358270](../assert/image-20210424170358270.png)
 
-![image-20210424170405031](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424170405031.png)
+![image-20210424170405031](../assert/image-20210424170405031.png)
 
-![image-20210424170422146](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424170422146.png)
+![image-20210424170422146](../assert/image-20210424170422146.png)
 
-![image-20210424170430701](C:\Users\rog\AppData\Roaming\Typora\typora-user-images\image-20210424170430701.png)
+![image-20210424170430701](../assert/image-20210424170430701.png)
 
 ## 表锁有意向共享锁和意向排他锁
 
-表锁 有意向共享锁和意向拍他锁 （表锁要锁定表内所有行，所以加表锁的时候不能有行锁。因此在加行锁时候，数据库会自动给表加一个意向锁，表述表内有行被锁定，这样加表锁的时候，不用再一行一行扫描有没有行锁）
+表锁 有意向共享锁和意向排他锁 （表锁要锁定表内所有行，所以加表锁的时候不能有行锁。因此在加行锁时候，数据库会自动给表加一个意向锁，表述表内有行被锁定，这样加表锁的时候，不用再一行一行扫描有没有行锁）
 
 ## 锁的本质锁的是索引
 
